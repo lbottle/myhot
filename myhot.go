@@ -30,7 +30,6 @@ func main() {
 	currpath, _ = os.Getwd()
 	exit = make(chan bool)
 	var paths []string
-	fmt.Println(currpath)
 	readAppDirectories(currpath, &paths)
 	NewWatcher(paths)
 	Autobuild()
@@ -81,7 +80,6 @@ func NewWatcher(paths []string) {
 		for {
 			select {
 			case e := <-watcher.Event:
-				fmt.Printf("[ %v ]", e)
 				isbuild := true
 				// Skip ignored files
 				if shouldIgnoreFile(e.Name) {
