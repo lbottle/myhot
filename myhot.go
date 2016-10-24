@@ -89,6 +89,7 @@ func NewWatcher(paths []string) {
 				}
 				if !checkIfWatchExt(e.Name) {
 					continue
+
 				}
 				mt := getFileModTime(e.Name)
 				if t := eventTime[e.Name]; mt == t {
