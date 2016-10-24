@@ -49,7 +49,6 @@ func readAppDirectories(dir string, paths *[]string) {
 	}
 	useDirectory := false
 	for _, fileInfo := range fileInfos {
-		fmt.Printf("file ( %s ) \n", dir+"/"+fileInfo.Name())
 		if strings.HasSuffix(fileInfo.Name(), "views") {
 			continue
 		}
